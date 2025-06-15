@@ -143,14 +143,11 @@ header::after {
 
 #sobre_nosotros,
 #productos {
-    max-width: 1800px; 
-    padding: 0 10px;   
-}
-#sobre_nosotros,
-#productos {
-    position: relative;
-    padding-bottom: 100px; 
-    margin-bottom: 50px;  
+  position: relative;
+  padding: 0 10px;
+  padding-bottom: 100px;
+  margin: 50px auto;
+  max-width: 1200px;
 }
 
 #sobre_nosotros::after,
@@ -191,25 +188,27 @@ header::after {
 }
 
 /* --- Sección de Contacto  --- */
-#contact {
+
+#contacto {
     background-color: #ffffff;
     padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-    max-width: 600px; 
-    margin: 40px auto; 
-    text-align: center; 
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 600px; /* Ancho máximo para mejor legibilidad */
+    margin: 40px auto; /* Centrado horizontal */
+    text-align: center; /* Alineación central */
+}
 
-#contact h2 {
+#contacto h2 {
     margin-bottom: 30px;
-    color: #4d5940; 
+    color: #4d5940; /* Color que coincide con tu paleta */
     font-weight: 600;
     text-align: center;
     position: relative;
     padding-bottom: 15px;
 }
 
-#contact h2::after {
+#contacto h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -220,21 +219,21 @@ header::after {
     background-color: #4d5940;
 }
 
-#contact .form-control {
+#contacto .form-control {
     border-radius: 8px;
     border: 1px solid #e0e0e0;
     padding: 12px 15px;
     margin-bottom: 20px;
-    text-align: center; 
+    text-align: center; /* Texto centrado en los inputs */
     transition: all 0.3s;
 }
 
-#contact .form-control:focus {
+#contacto .form-control:focus {
     border-color: #4d5940;
     box-shadow: 0 0 0 3px rgba(77, 89, 64, 0.2);
 }
 
-#contact .btn-primary {
+#contacto .btn-primary {
     background-color: #4d5940;
     border: none;
     padding: 12px 30px;
@@ -245,14 +244,15 @@ header::after {
     display: block;
     width: 100%;
     max-width: 200px;
-    margin: 0 auto; 
+    margin: 0 auto; /* Centrar botón */
 }
 
-#contact .btn-primary:hover {
+#contacto .btn-primary:hover {
     background-color: #3a4530;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 
 /* --- Footer --- */
 footer {
