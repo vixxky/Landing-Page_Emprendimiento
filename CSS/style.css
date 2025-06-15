@@ -1,40 +1,170 @@
-/* Variables de color  */
-:root {
-  --bs-green: #2e7d32;
-  --bs-green-dark: #1b5e20;
-  --bs-beige: #f5f5dc;
-  --bs-beige-light: #f8f8f0;
-  --bs-gray-dark: #343a40;
-  --bs-white: #fff;
-}
-
-/* Reset básico */
+/* --- Estilos Generales --- */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f2f2f2;
 }
 
-/* ESTILOS DEL NAVBAR */
-
-/* Navbar verde oscuro con texto beige */
+/* --- Header / Navbar --- */
 .navbar {
-  background-color: #4d5940 ;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2 !important;
+    border-bottom: none !important;
+    padding: 15px 0;
 }
 
 .navbar-brand {
-  font-weight: 700;
-  color: var(--bs-beige-light) ;
-  font-size: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
+.navbar-brand img {
+    width: 100px; /* Logo más grande */
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar-brand, 
 .nav-link {
-  color: var(--bs-beige) ;
-  margin: 0 0.5rem;
-  transition: color 0.3s;
+    color: #4d5940 !important; /* Verde principal */
+    font-weight: 500;
 }
 
 .nav-link:hover {
-  color: var(--bs-white) ;
+    color: #4d5940 !important; /* Verde oscuro al hover */
+}
+
+.navbar-nav {
+    gap: 20px; /* Espacio entre links */
+}
+
+/* --- Hero Section --- */
+header {
+    background: url('../IMG/IMG_Header.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 89, 64, 0.6); /* #4d5940 con 60% de opacidad */
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+/* --- Sobre Nosotros --- */
+#sobre_nosotros {
+    padding: 60px 0;
+}
+
+#sobre_nosotros img {
+    width: 100%;
+    max-height: 400px; /* Controla el tamaño */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+#sobre_nosotros img:hover {
+    transform: scale(1.02);
+}
+
+/* --- Productos --- */
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* --- Contacto --- */
+#contact {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+#contact .form-control {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+#contact .form-control:focus {
+    border-color: #4d5940;
+    box-shadow: 0 0 0 0.2rem rgba(77, 89, 64, 0.25);
+}
+
+#contact .btn-primary {
+    background-color: #4d5940;
+    border: none;
+    padding: 10px 25px;
+    font-weight: 500;
+}
+
+#contact .btn-primary:hover {
+    background-color: #3a4530;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #4d5940 !important;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #d1d9c7;
+    text-decoration: none;
+}
+
+footer p {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+/* --- Responsive (Móviles) --- */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        width: 50px;
+    }
+    
+    #sobre_nosotros img {
+        max-height: 300px;
+    }
+    
+    .header-content h1 {
+        font-size: 2rem;
+    }
 }
