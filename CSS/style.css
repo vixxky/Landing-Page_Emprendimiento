@@ -128,21 +128,47 @@ header::after {
 }
 
 /* --- Sobre Nosotros --- */
-#sobre_nosotros {
-    padding: 10px 0;
-}
+
 
 #sobre_nosotros img {
     width: 100%;
-    max-height: 600px; /* Controla el tamaño */
+    max-height: 500px; /* Controla el tamaño */
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s;
+    margin-top: 40px;
 }
 
 #sobre_nosotros img:hover {
     transform: scale(1.02);
 }
+
+#sobre_nosotros,
+#productos {
+    max-width: 1800px; /* Controla el ancho máximo */
+    padding: 0 10px;   /* Da espacio a los lados */
+}
+#sobre_nosotros,
+#productos {
+    position: relative;
+    padding-bottom: 100px; /* deja más espacio abajo para que aparezca la línea */
+    margin-bottom: 50px;  /* opcional, si deseas más aire hacia abajo */
+}
+
+#sobre_nosotros::after,
+#productos::after {
+    content: '';
+    position: absolute;
+    bottom: 40px;  /* así la línea queda un poco más abajo que el texto */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 4px;
+    background-color: #4d5940;
+    border-radius: 2px;
+}
+
+
 
 /* --- Productos --- */
 .card {
@@ -232,3 +258,15 @@ footer p {
         font-size: 2rem;
     }
 }
+section h2 {
+    font-size: 2.5rem; /* Más grande */
+    color: #4d5940;    /* Mismo verde del navbar */
+    font-weight: 700;  /* Más grueso */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+     h1, h2, h3 {
+     font-family: 'Poppins', sans-serif;}
+    margin-bottom: 20px;
+    
+}
+
+
