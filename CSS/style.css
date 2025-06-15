@@ -1,0 +1,40 @@
+/* Variables de color  */
+:root {
+  --bs-green: #2e7d32;
+  --bs-green-dark: #1b5e20;
+  --bs-beige: #f5f5dc;
+  --bs-beige-light: #f8f8f0;
+  --bs-gray-dark: #343a40;
+  --bs-white: #fff;
+}
+
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ESTILOS DEL NAVBAR */
+
+/* Navbar verde oscuro con texto beige */
+.navbar {
+  background-color: #4d5940 ;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--bs-beige-light) ;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--bs-beige) ;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--bs-white) ;
+}
