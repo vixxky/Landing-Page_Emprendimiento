@@ -6,7 +6,11 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/* Unificar márgenes en secciones */
+section {
+    margin: 0 5% 20px 5%; /* Actualmente usas valores distintos */
+    padding: 40px 0;
+}
 
 /* ===== ESTILOS PARA NAVBAR - SIN MODIFICAR HTML ===== */
 
@@ -77,16 +81,13 @@ body {
     text-decoration: underline !important;
 }
 
-/* Botón para móviles */
-.navbar-custom .navbar-toggler {
-    border-color: #4d5940 !important;
-    padding: 5px 10px !important;
-}
 
-.navbar-custom .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(77, 89, 64, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background-color: #fff !important; /* Fondo blanco para mejor legibilidad */
+        padding: 20px !important;
+    }
 }
-
 /* Responsive: menú colapsado en móviles */
 @media (max-width: 992px) {
     .navbar-custom .navbar-collapse {
@@ -178,6 +179,8 @@ header::after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     height: 100%;
+    will-change: transform; /* Mejora rendimiento de animaciones */
+    backface-visibility: hidden; /* Elimina flickering en hover */
 }
 
 .card:hover {
@@ -190,33 +193,69 @@ header::after {
     object-fit: cover;
 }
 
-/* --- Contacto --- */
+/* --- Sección de Contacto Mejorada --- */
 #contact {
-    background-color: #f2f2f2;
-    padding: 60px 0;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 600px; /* Ancho máximo para mejor legibilidad */
+    margin: 40px auto; /* Centrado horizontal */
+    text-align: center; /* Alineación central */
+}
+
+#contact h2 {
+    margin-bottom: 30px;
+    color: #4d5940; /* Color que coincide con tu paleta */
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #4d5940;
 }
 
 #contact .form-control {
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    padding: 10px 15px;
-    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    text-align: center; /* Texto centrado en los inputs */
+    transition: all 0.3s;
 }
 
 #contact .form-control:focus {
     border-color: #4d5940;
-    box-shadow: 0 0 0 0.2rem rgba(77, 89, 64, 0.25);
+    box-shadow: 0 0 0 3px rgba(77, 89, 64, 0.2);
 }
 
 #contact .btn-primary {
     background-color: #4d5940;
     border: none;
-    padding: 10px 25px;
+    padding: 12px 30px;
+    border-radius: 8px;
     font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto; /* Centrar botón */
 }
 
 #contact .btn-primary:hover {
     background-color: #3a4530;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Footer --- */
@@ -225,6 +264,9 @@ footer {
     color: #f2f2f2;
     padding: 30px 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer a {
